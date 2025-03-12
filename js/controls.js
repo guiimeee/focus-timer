@@ -26,11 +26,20 @@ export default function Controls({
 
     function getMinutes() {
         let newMinutes = prompt('quantos minutos?')
+        const isNotNumber = notANumber(newMinutes)
+        if(isNotNumber) {
+            alert('Somente Números!')
+            return
+        } 
         if (!newMinutes) {
           return false
         }
 
         return newMinutes
+    }
+
+    function notANumber(value) {
+        return isNaN(value)
     }
 
     return {
